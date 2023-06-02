@@ -19,17 +19,17 @@ public class Doador {
     private String imageUrl;
 
     @Column(columnDefinition = "TEXT")
-    private String descricao;
+    private String description;
     
     public Doador() {
     }
 
-    public Doador(Long id, String name, String email, String imageUrl, String descricao) {
+    public Doador(Long id, String name, String email, String imageUrl, String description) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.imageUrl = imageUrl;
-        this.descricao = descricao;
+        this.description = description;
     }
 
     public Long getId() {
@@ -65,11 +65,11 @@ public class Doador {
     }
 
     public String getDescricao() {
-        return descricao;
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescricao(String description) {
+        this.description = description;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class Doador {
     @Override
     public String toString() {
         return "Doador [id=" + id + ", name=" + name + ", email=" + email + ", imageUrl=" + imageUrl + ", descricao="
-                + descricao + "]";
+                + description + "]";
     }
 }
 

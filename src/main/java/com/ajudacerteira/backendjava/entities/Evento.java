@@ -16,8 +16,8 @@ public class Evento {
     private Long id;
     private String name;
     private String address;
-    private String eventImageUrl;
-    private String eventDay; 
+    private String imageUrl;
+    private String day; 
 
 
     @Column(columnDefinition = "TEXT")
@@ -34,8 +34,8 @@ public class Evento {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.eventImageUrl = eventImageUrl;
-        this.eventDay = eventDay;
+        this.imageUrl = eventImageUrl;
+        this.day = eventDay;
         this.description = description;
         this.creatorName = creatorName;
         this.creatorImageUrl = creatorImageUrl;
@@ -59,17 +59,17 @@ public class Evento {
     public void setAddress(String address) {
         this.address = address;
     }
-    public String getEventImageUrl() {
-        return eventImageUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
-    public void setEventImageUrl(String eventImageUrl) {
-        this.eventImageUrl = eventImageUrl;
+    public void setImageUrl(String eventImageUrl) {
+        this.imageUrl = eventImageUrl;
     }
-    public String getEventDay() {
-        return eventDay;
+    public String getDay() {
+        return day;
     }
-    public void setEventDay(String eventDay) {
-        this.eventDay = eventDay;
+    public void setDay(String eventDay) {
+        this.day = eventDay;
     }
     public String getDescription() {
         return description;
@@ -117,8 +117,8 @@ public class Evento {
 
     @Override
     public String toString() {
-        return "Evento [id=" + id + ", name=" + name + ", address=" + address + ", eventImageUrl=" + eventImageUrl
-                + ", eventDay=" + eventDay + ", description=" + description + ", creatorName=" + creatorName
+        return "Evento [id=" + id + ", name=" + name + ", address=" + address + ", eventImageUrl=" + imageUrl
+                + ", eventDay=" + day + ", description=" + description + ", creatorName=" + creatorName
                 + ", creatorImageUrl=" + creatorImageUrl + "]";
     }
 }
