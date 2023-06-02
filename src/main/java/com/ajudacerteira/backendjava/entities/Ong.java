@@ -20,18 +20,18 @@ public class Ong {
 
     @Column(columnDefinition = "TEXT")
     private String description;
-    private String adress;
+    private String address;
 
     public Ong() {
     }
 
-    public Ong(Long id, String name, String email, String imageUrl, String description, String adress) {
+    public Ong(Long id, String name, String email, String imageUrl, String description, String address) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.imageUrl = imageUrl;
         this.description = description;
-        this.adress = adress;
+        this.address = address;
     }
 
     public Long getId() {
@@ -74,12 +74,12 @@ public class Ong {
         this.description = description;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -110,6 +110,6 @@ public class Ong {
     @Override
     public String toString() {
         return "Ong [id=" + id + ", name=" + name + ", email=" + email + ", imageUrl=" + imageUrl + ", description="
-                + description + ", adress=" + adress + "]";
+                + description + ", address=" + address + "]";
     }
 }
