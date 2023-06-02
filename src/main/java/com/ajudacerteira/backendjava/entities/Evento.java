@@ -18,6 +18,7 @@ public class Evento {
     private String address;
     private String imageUrl;
     private String dia; 
+    //
 
 
     @Column(columnDefinition = "TEXT")
