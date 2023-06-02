@@ -17,7 +17,7 @@ public class Evento {
     private String name;
     private String address;
     private String imageUrl;
-    private String day; 
+    private String dia; 
 
 
     @Column(columnDefinition = "TEXT")
@@ -29,13 +29,13 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(Long id, String name, String address, String eventImageUrl, String eventDay, String description,
+    public Evento(Long id, String name, String address, String eventImageUrl, String dia, String description,
             String creatorName, String creatorImageUrl) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.imageUrl = eventImageUrl;
-        this.day = eventDay;
+        this.dia = dia;
         this.description = description;
         this.creatorName = creatorName;
         this.creatorImageUrl = creatorImageUrl;
@@ -65,11 +65,11 @@ public class Evento {
     public void setImageUrl(String eventImageUrl) {
         this.imageUrl = eventImageUrl;
     }
-    public String getDay() {
-        return day;
+    public String getDia() {
+        return dia;
     }
-    public void setDay(String eventDay) {
-        this.day = eventDay;
+    public void setDia(String eventDay) {
+        this.dia = eventDay;
     }
     public String getDescription() {
         return description;
@@ -118,7 +118,7 @@ public class Evento {
     @Override
     public String toString() {
         return "Evento [id=" + id + ", name=" + name + ", address=" + address + ", eventImageUrl=" + imageUrl
-                + ", eventDay=" + day + ", description=" + description + ", creatorName=" + creatorName
+                + ", eventDay=" + dia + ", description=" + description + ", creatorName=" + creatorName
                 + ", creatorImageUrl=" + creatorImageUrl + "]";
     }
 }
