@@ -32,7 +32,8 @@ public class DoadorController {
 
     @PostMapping
     public Doador saveDoador(@RequestBody Doador doador){
-        return repository.save(doador);
+        Doador save = repository.save(doador);
+        return save;
     }
 
 }
