@@ -20,6 +20,7 @@ import com.ajudacerteira.backendjava.repositories.DoadorRepository;
 @RestController
 @CrossOrigin(origins = "*")
 public class DoadorController {
+// Link do Endpoint Funcional: https://backend-ajuda-certeria-production.up.railway.app/doadores
     
     @Autowired
     private DoadorRepository repository;

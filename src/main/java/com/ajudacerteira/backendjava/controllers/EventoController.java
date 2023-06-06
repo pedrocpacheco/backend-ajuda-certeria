@@ -20,6 +20,7 @@ import com.ajudacerteira.backendjava.repositories.EventoRepository;
 @RestController
 @CrossOrigin(origins = "*")
 public class EventoController {
+// Link do Endpoint funcional: https://backend-ajuda-certeria-production.up.railway.app/eventos
     
     @Autowired
     private EventoRepository repository;

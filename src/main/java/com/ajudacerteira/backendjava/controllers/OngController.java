@@ -20,6 +20,7 @@ import com.ajudacerteira.backendjava.repositories.OngRepository;
 @RestController
 @CrossOrigin(origins = "*")
 public class OngController {
+// Link do endpoint funcional: https://backend-ajuda-certeria-production.up.railway.app/ongs
 
     @Autowired
     private OngRepository repository;
