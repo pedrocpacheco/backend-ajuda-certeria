@@ -26,7 +26,7 @@ public class OngController {
     public List<Ong> findAll(){
         return service.findAll();
     }
-
+//
     @GetMapping(value = "/{id}")
     public Ong findById(@PathVariable Long id){
         return service.findById(id);
