@@ -24,22 +24,22 @@ public class DoadorController {
     @Autowired
     private DoadorRepository repository;
 
-    @GetMapping
+    @GetMapping("/eventos")
     public List<Doador> findAll(){
         return repository.findAll();
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping("/eventos/{id}")
     public Doador findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
-    @PostMapping
+    @PostMapping("/eventos")
     public Doador saveDoador(@RequestBody Doador doador){
         return repository.save(doador);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping("/eventos/{id}")
     public Doador updateDoador(@PathVariable Long id, @RequestBody Doador doador){
         if(!repository.existsById(id))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -47,7 +47,7 @@ public class DoadorController {
         return repository.save(doador);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping("/eventos/{id}")
     public void deleteDoador(@PathVariable Long id){
         repository.deleteById(id);
     }

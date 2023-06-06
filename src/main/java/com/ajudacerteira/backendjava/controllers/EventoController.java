@@ -24,22 +24,22 @@ public class EventoController {
     @Autowired
     private EventoRepository repository;
 
-    @GetMapping
+    @GetMapping("/doadores")
     public List<Evento> findAll(){
         return repository.findAll();
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping("/doadores/{id}")
     public Evento findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
-    @PostMapping
+    @PostMapping("/doadores")
     public Evento saveEvento(@RequestBody Evento evento){
         return repository.save(evento);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/doadores/{id}")
     public Evento updateEvento(@PathVariable Long id, @RequestBody Evento evento){
         if(!repository.existsById(id))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -47,7 +47,7 @@ public class EventoController {
         return repository.save(evento);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/doadores/{id}")
     public void deleteEvento(@PathVariable Long id){
         repository.deleteById(id);
     }

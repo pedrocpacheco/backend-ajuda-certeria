@@ -24,22 +24,22 @@ public class OngController {
     @Autowired
     private OngRepository repository;
 
-    @GetMapping
+    @GetMapping("/ongs")
     public List<Ong> findAll(){
         return repository.findAll();
     }
 //
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/ongs/{id}")
     public Ong findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
-    @PostMapping
+    @PostMapping("/ongs")
     public Ong saveOng(@RequestBody Ong ong){
         return repository.save(ong);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/ongs/{id}")
     public Ong updateOng(@PathVariable Long id, @RequestBody Ong ong){
         if(!repository.existsById(id))
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -47,7 +47,7 @@ public class OngController {
         return repository.save(ong);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/ongs/{id}")
     public void deleteOng(@PathVariable Long id){
         repository.deleteById(id);
     }
