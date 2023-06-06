@@ -16,15 +16,17 @@ public class Evento {
     private Long id;
     private String name;
     private String address;
+
+    @Column(columnDefinition = "TEXT")
     private String imageUrl;
     private String dia; 
-    //
-
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
     private String creatorName;
+
+    @Column(columnDefinition = "TEXT")
     private String creatorImageUrl;
 
     public Evento() {

@@ -16,6 +16,8 @@ public class Doador {
     private Long id;
     private String name;
     private String email;
+
+    @Column(columnDefinition = "TEXT")
     private String imageUrl;
 
     @Column(columnDefinition = "TEXT")

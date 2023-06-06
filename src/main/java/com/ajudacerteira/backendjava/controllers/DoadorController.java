@@ -8,37 +8,42 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ajudacerteira.backendjava.entities.Doador;
-import com.ajudacerteira.backendjava.repositories.DoadorRepository;
+import com.ajudacerteira.backendjava.services.DoadorService;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class DoadorController {
     
     @Autowired
-    private DoadorRepository repository;
+    private DoadorService service;
 
-    @GetMapping("/doadores")
+    @GetMapping
     public List<Doador> findAll(){
-        return repository.findAll();
+        return service.findAll();
     }
 
-    @GetMapping(value = "/doadores/{id}")
+    @GetMapping(value = "/{id}")
     public Doador findById(@PathVariable Long id){
-        return repository.findById(id).get();
+        return service.findById(id);
     }
 
-    @PostMapping("/doadores")
+    @PostMapping
     public Doador saveDoador(@RequestBody Doador doador){
-        Doador save = repository.save(doador);
-        return save;
+        return service.saveDoador(doador);
     }
 
-    @DeleteMapping("/doadores/{id}")
+    @PutMapping(value = "/{id}")
+    public Doador updateDoador(@PathVariable Long id, @RequestBody Doador doador){
+        return service.updateDoador(id, doador);
+    }
+
+    @DeleteMapping(value = "/{id}")
     public void deleteDoador(@PathVariable Long id){
-        repository.deleteById(id);
+        service.deleteDoador(id);
     }
 }
