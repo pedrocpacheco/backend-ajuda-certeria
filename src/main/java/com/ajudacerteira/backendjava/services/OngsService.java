@@ -10,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.ajudacerteira.backendjava.entities.Ong;
 import com.ajudacerteira.backendjava.repositories.OngRepository;
 
-public class OngService {
+public class OngsService {
     @Autowired
     private OngRepository repository;
 

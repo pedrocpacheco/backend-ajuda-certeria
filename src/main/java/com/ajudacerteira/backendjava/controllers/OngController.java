@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ajudacerteira.backendjava.entities.Ong;
-import com.ajudacerteira.backendjava.services.OngService;
+import com.ajudacerteira.backendjava.services.OngsService;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class OngController {
     
     @Autowired
-    private OngService service;
+    private OngsService service;
 
     @GetMapping("/ongs")
     public List<Ong> findAll(){
