@@ -11,6 +11,7 @@ import com.ajudacerteira.backendjava.entities.Evento;
 import com.ajudacerteira.backendjava.repositories.EventoRepository;
 
 public class EventoService {
+    
     @Autowired
     private EventoRepository repository;
 
