@@ -25,21 +25,25 @@ public class OngController {
     @Autowired
     private OngRepository repository;
 
+    // Encontra e retorna todas as Ongs cadastradas -> GET
     @GetMapping("/ongs")
     public List<Ong> findAll(){
         return repository.findAll();
     }
-//
+
+    // Encontra e retorna a Ong com ID igual ao ID passado na requisição -> GET
     @GetMapping(value = "/ongs/{id}")
     public Ong findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
+    // Adiciona uma nova Ong, suas informações devem ser passadas no corpo da requisição -> POST
     @PostMapping("/ongs")
     public Ong saveOng(@RequestBody Ong ong){
         return repository.save(ong);
     }
 
+    // Atualiza uma Ong existente. É necessario passar o id da Ong que deseja atualizar, e o seu novo corpo -> PUT
     @PutMapping("/ongs/{id}")
     public Ong updateOng(@PathVariable Long id, @RequestBody Ong ong){
         if(!repository.existsById(id))
@@ -48,6 +52,7 @@ public class OngController {
         return repository.save(ong);
     }
 
+    // Deleta a ong com ID igual ao id especificado na requisição -> DELETE
     @DeleteMapping("/ongs/{id}")
     public void deleteOng(@PathVariable Long id){
         repository.deleteById(id);

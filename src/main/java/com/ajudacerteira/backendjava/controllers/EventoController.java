@@ -25,21 +25,25 @@ public class EventoController {
     @Autowired
     private EventoRepository repository;
 
+    // Encotra e Retorna todos os Eventos já cadastrados -> GET
     @GetMapping("/eventos")
     public List<Evento> findAll(){
         return repository.findAll();
     }
 
+    // Encontra e Retorna o Evento de ID igual ao ID especificado na requisição -> GET
     @GetMapping("/eventos/{id}")
     public Evento findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
+    // Adiciona um novo Evento. Suas informações devem ser passadas no corpo da requisição -> POST
     @PostMapping("/eventos")
     public Evento saveEvento(@RequestBody Evento evento){
         return repository.save(evento);
     }
 
+    // Atualiza um Evento existente. É necessario passar o ID do Evento que deseja atualizar, e o seu novo corpo -> PUT
     @PutMapping("/eventos/{id}")
     public Evento updateEvento(@PathVariable Long id, @RequestBody Evento evento){
         if(!repository.existsById(id))
@@ -48,6 +52,7 @@ public class EventoController {
         return repository.save(evento);
     }
 
+    // Deleta o Evento com ID igual ao id especificado na requisição -> DELETE
     @DeleteMapping("/eventos/{id}")
     public void deleteEvento(@PathVariable Long id){
         repository.deleteById(id);

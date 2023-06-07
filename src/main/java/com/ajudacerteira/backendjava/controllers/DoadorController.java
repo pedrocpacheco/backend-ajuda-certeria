@@ -25,21 +25,25 @@ public class DoadorController {
     @Autowired
     private DoadorRepository repository;
 
+    // Encontra e retorna todos os Doadores cadastrados -> GET
     @GetMapping("/doadores")
     public List<Doador> findAll(){
         return repository.findAll();
     }
 
+    // Encontra e retorna o Doador com ID igual ao ID passado na requisição -> GET
     @GetMapping("/doadores/{id}")
     public Doador findById(@PathVariable Long id){
         return repository.findById(id).get();
     }
 
+    // Adiciona um novo Doador, este, deve ser passado no corpo da requisição -> POST
     @PostMapping("/doadores")
     public Doador saveDoador(@RequestBody Doador doador){
         return repository.save(doador);
     }
 
+    // Atualiza um Doador existente. É necessario passar o id do Doador que deseja atualizar, e o seu novo corpo -> PUT
     @PutMapping("/doadores/{id}")
     public Doador updateDoador(@PathVariable Long id, @RequestBody Doador doador){
         if(!repository.existsById(id))
